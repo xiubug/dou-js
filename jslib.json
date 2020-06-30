@@ -1,0 +1,11 @@
+{
+    "name": "dou-js",
+    "npmname": "dou-js",
+    "umdname": "dou-js",
+    "username": "sosout",
+    "type": "ts",
+    "module": "umd,esm,commonjs",
+    "test": "mocha",
+    "lang": "en",
+    "version": "1.6.0"
+}
