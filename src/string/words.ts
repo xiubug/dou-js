@@ -12,13 +12,13 @@ function asciiWords(string: string): any[] {
 }
 
 /**
- * 将“字符串”分割成单词的数组。
+ * 拆分字符串string中的词为数组 。
  *
  * @since 0.1.1
  * @category String
- * @param {string} [string=''] 要检查的字符串。
- * @param {RegExp|string} [pattern] 匹配单词的模式。
- * @returns {Array} Returns the words of `string`.
+ * @param {string} [string=''] 要拆分的字符串。
+ * @param {RegExp|string} [pattern] 匹配模式。
+ * @returns {Array} 返回拆分string后的数组。
  * @example
  *
  * words('fred, barney, & pebbles')
@@ -27,12 +27,12 @@ function asciiWords(string: string): any[] {
  * words('fred, barney, & pebbles', /[^, ]+/g)
  * // => ['fred', 'barney', '&', 'pebbles']
  */
-function words(string: string, pattern: RegExp | string): any[] {
+const words = (string: string, pattern: RegExp | string): any[] => {
     if (pattern === undefined) {
         const result = hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
         return result || [];
     }
     return string.match(pattern) || [];
-}
+};
 
 export default words;
